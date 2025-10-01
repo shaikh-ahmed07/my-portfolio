@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ahmed • CS Portfolio</title>
+  
+  <!-- Favicon (emoji version - no 404 error) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+  
+  <!-- Font Awesome - Using CDN instead of kit (fixes 403 error) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <script defer src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar glass">
+    <div class="nav-container">
+      <a href="#home" class="logo">&lt;Ahmed<span class="accent">/</span>&gt;</a>
+      <nav id="nav-links">
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#timeline">Timeline</a>
+        <a href="#contact">Contact</a>
+        <button id="theme-btn" aria-label="Toggle theme">🌙</button>
+      </nav>
+      <div class="hamburger" onclick="toggleMenu()">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section id="home" class="hero section--full">
+    <div class="hero-left">
+      <h1 class="gradient-text">Hey, I'm Ahmed <span class="wave">👋</span></h1>
+      <h2 class="typewriter"></h2>
+      <p class="tagline">I craft delightful web experiences &amp; explore AI‑powered interfaces.</p>
+      <div class="hero-btns">
+        <a href="#projects" class="btn">View Projects</a>
+        <a href="RESUME.pdf" class="btn btn--outline">Resume ↗</a>
+      </div>
+      <div class="socials">
+        <a href="https://github.com/shaikh-ahmed07" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com/" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin"></i></a>
+        <a href="mailto:iamshaikhahmed07@gmail.com"><i class="fa-solid fa-envelope"></i></a>
+      </div>
+    </div>
+    <div class="hero-anim">
+      <lottie-player src="https://assets3.lottiefiles.com/packages/lf20_myejiggj.json" background="transparent" speed="1" style="width: 420px; height: 420px;" loop autoplay></lottie-player>
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about" class="section fade-in-up about">
+    <img src="ahmed.jpg" alt="Ahmed Portrait">
+    <div>
+      <h3>About Me</h3>
+      <p>I'm a <strong>Computer Science student</strong> who loves turning complex problems into simple, beautiful and intuitive solutions.</p>
+    </div>
+  </section>
+
+  <!-- Skills -->
+  <section id="skills" class="section fade-in-up">
+    <h3>Skills</h3>
+    <div class="skills">
+      <div class="skill"><span>HTML</span><div class="bar"><div data-width="95"></div></div></div>
+      <div class="skill"><span>CSS</span><div class="bar"><div data-width="90"></div></div></div>
+      <div class="skill"><span>JavaScript</span><div class="bar"><div data-width="85"></div></div></div>
+      <div class="skill"><span>React</span><div class="bar"><div data-width="80"></div></div></div>
+      <div class="skill"><span>Node.js</span><div class="bar"><div data-width="75"></div></div></div>
+    </div>
+  </section>
+
+  <!-- Projects -->
+  <section id="projects" class="section fade-in-up">
+    <h3>Featured Projects</h3>
+    <div class="card-container">
+      <div class="card glass">
+        <h4>Café 7 Website</h4>
+        <p>Frontend for a local café.</p>
+        <a href="https://shaikh-ahmed07.github.io/cafe7/" target="_blank" rel="noopener">Live ↗</a>
+      </div>
+      <div class="card glass">
+        <h4>Digital Career Guidance</h4>
+        <p>For the students to decide about their career</p>
+        <a href="https://shaikh-ahmed07.github.io/Jk-project/" target="_blank" rel="noopener">Live ↗</a>
+      </div>
+       <div class="card glass">
+        <h4>Canteen Interface</h4>
+        <p>Frontend for a college.</p>
+        <a href="https://shaikh-ahmed07.github.io/Lords-Canteen/" target="_blank" rel="noopener">Live ↗</a>
+      </div>
+       <div class="card glass">
+        <h4>Simon Game</h4>
+        <p>Simple Simon Game</p>
+        <a href="https://shaikh-ahmed07.github.io/simon-Game/" target="_blank" rel="noopener">Live ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Timeline -->
+  <section id="timeline" class="section fade-in-up">
+    <h3>Timeline</h3>
+    <ul class="timeline">
+      <li><span class="date">2025</span><div class="content"><h4>Final Year B.E. CSE</h4><p>Research intern @ Pantect — worked on VAE models for brain‑tumor detection.</p></div></li>
+      <li><span class="date">2025</span><div class="content"><h4>Digital Career Guidance for Jammu and Kashmir</h4><p>Made a Complete Offline Platform For The People of J&K</p></div></li>
+      <li><span class="date">2025</span><div class="content"><h4>Canteen Site</h4><p>Made a Canteen Interface For The College</p></div></li>
+      <li><span class="date">2024</span><div class="content"><h4>Founder – Café 7 Site</h4><p>Designed & hosted the café's frontend.</p></div></li>
+    </ul>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact" class="section fade-in-up">
+    <h3>Let's Work Together</h3>
+    <form id="contact-form" action="https://formspree.io/f/mrbyqdol" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required>
+      <input type="email" name="email" placeholder="Your Email" required>
+      <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+      <button type="submit" class="btn">Send</button>
+      <p id="form-status"></p>
+    </form>
+  </section>
+
+  <footer>
+    <p>© 2025 Ahmed</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
