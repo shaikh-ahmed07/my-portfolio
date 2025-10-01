@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ahmed's Resume</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      color: white;
+      margin-bottom: 30px;
+      animation: fadeInDown 0.6s ease;
+    }
+
+    .header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    }
+
+    .header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    .resume-container {
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+      max-width: 900px;
+      width: 100%;
+      animation: fadeInUp 0.8s ease;
+    }
+
+    .controls {
+      background: #f8f9fa;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 2px solid #e9ecef;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    .btn-secondary {
+      background: white;
+      color: #667eea;
+      border: 2px solid #667eea;
+    }
+
+    .btn-secondary:hover {
+      background: #667eea;
+      color: white;
+      transform: translateY(-2px);
+    }
+
+    .pdf-viewer {
+      width: 100%;
+      height: 80vh;
+      min-height: 600px;
+      border: none;
+      background: white;
+    }
+
+    .fallback {
+      padding: 60px 40px;
+      text-align: center;
+      display: none;
+    }
+
+    .fallback.active {
+      display: block;
+    }
+
+    .fallback h2 {
+      color: #667eea;
+      margin-bottom: 20px;
+    }
+
+    .fallback p {
+      color: #666;
+      margin-bottom: 30px;
+      line-height: 1.6;
+    }
+
+    .back-link {
+      color: white;
+      text-decoration: none;
+      font-weight: 600;
+      margin-bottom: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+
+    .back-link:hover {
+      transform: translateX(-5px);
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 10px;
+      }
+
+      .header {
+        margin-bottom: 20px;
+      }
+
+      .header h1 {
+        font-size: 1.8rem;
+      }
+
+      .header p {
+        font-size: 0.95rem;
+      }
+
+      .back-link {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+      }
+
+      .resume-container {
+        border-radius: 15px;
+      }
+
+      .controls {
+        padding: 12px 15px;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .controls > div {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+      }
+
+      .btn {
+        font-size: 0.9rem;
+        padding: 12px 20px;
+        width: 100%;
+        justify-content: center;
+      }
+
+      .pdf-viewer {
+        height: calc(100vh - 280px);
+        min-height: 400px;
+      }
+
+      .fallback {
+        padding: 40px 20px;
+      }
+
+      .fallback h2 {
+        font-size: 1.5rem;
+      }
+
+      .fallback p {
+        font-size: 0.95rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .header h1 {
+        font-size: 1.5rem;
+      }
+
+      .header p {
+        font-size: 0.85rem;
+      }
+
+      .btn {
+        font-size: 0.85rem;
+        padding: 10px 16px;
+      }
+
+      .pdf-viewer {
+        height: calc(100vh - 260px);
+        min-height: 350px;
+      }
+    }
+
+    .loading {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 60px;
+      color: #667eea;
+    }
+
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #667eea;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+  <a href="index.html" class="back-link">
+    ← Back to Portfolio
+  </a>
+
+  <div class="header">
+    <h1>📄 My Resume</h1>
+    <p>Feel free to download or view online</p>
+  </div>
+
+  <div class="resume-container">
+    <div class="controls">
+      <div>
+        <a href="Resume.pdf" download class="btn btn-primary">
+          ⬇️ Download PDF
+        </a>
+      </div>
+      <div>
+        <a href="Resume.pdf" target="_blank" class="btn btn-secondary">
+          🔗 Open in New Tab
+        </a>
+      </div>
+    </div>
+
+    <div id="loading" class="loading">
+      <div class="spinner"></div>
+    </div>
+
+    <iframe 
+      id="pdf-frame"
+      class="pdf-viewer" 
+      src="Resume.pdf"
+      title="Ahmed's Resume"
+      style="display: none;"
+    ></iframe>
+
+    <div id="fallback" class="fallback">
+      <h2>📱 Unable to Display PDF</h2>
+      <p>Your browser doesn't support embedded PDFs, but you can still access my resume!</p>
+      <a href="Resume.pdf" download class="btn btn-primary">Download Resume</a>
+      <a href="Resume.pdf" target="_blank" class="btn btn-secondary">Open in New Tab</a>
+    </div>
+  </div>
+
+  <script>
+    const iframe = document.getElementById('pdf-frame');
+    const loading = document.getElementById('loading');
+    const fallback = document.getElementById('fallback');
+
+    // Handle iframe load
+    iframe.onload = function() {
+      loading.style.display = 'none';
+      iframe.style.display = 'block';
+    };
+
+    // Handle iframe error
+    iframe.onerror = function() {
+      loading.style.display = 'none';
+      fallback.classList.add('active');
+    };
+
+    // Fallback timeout (if PDF doesn't load in 5 seconds)
+    setTimeout(function() {
+      if (loading.style.display !== 'none') {
+        loading.style.display = 'none';
+        iframe.style.display = 'block';
+      }
+    }, 5000);
+  </script>
+</body>
+</html>
